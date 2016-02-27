@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>Circular UI</title>
+	<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+	<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
+	<!-- load theme file for your application -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="ui-page ui-page-active" id="main">
+		<header class="ui-header">
+			<h2 class="ui-title">AWConfig</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview">
+				<li class="li-has-multiline"><a href="#tz1">Time Zone 1<span class="ui-li-sub-text li-text-sub" id="s_tz1">US/Pacific</span></a></li>
+				<li class="li-has-multiline"><a href="#tz2">Time Zone 2<span class="ui-li-sub-text li-text-sub" id="s_tz2">Asia/Tokyo</span></a></li>
+				<li class="li-has-multiline"><a href="#offset">Time Offset<span class="ui-li-sub-text li-text-sub" id="s_to">10</span></a></li>
+				<li class="li-has-multiline"><a href="#acolor">Accent Color<span class="ui-li-sub-text li-text-sub" id="s_ac">#bde52a</span></a></li>
+				<li class="li-has-multiline"><a href="#weatherapi">Weather API<span class="ui-li-sub-text li-text-sub" id="s_api">api-key-from-wu</span></a></li>
+				<li id="saveexit"><a href="#">Save Config</a></li>
+			</ul>
+		</div>	
+	</div>
+	
+	<div class="ui-page" id="offset">
+		<header class="ui-header">
+			<h2 class="ui-title">Time Offset</h2>
+		</header>
+		<div class="ui-content content-padding">
+			<p>Time Offset (min)<br />
+			<input type="text" id="minutesOffset"></p>	
+			<div class="ui-popup-footer ui-side-button ui-grid-col-2">
+				<a id="2btnPopup-cancel" href="#" class="ui-btn btn-icon-cancel" data-rel="back">Cancel</a>
+				<a id="2btnPopup-ok-min" href="#" class="ui-btn btn-icon-check" data-rel="back">OK</a>
+			</div>	
+		</div>
+	</div>
+	
+	
+	<div class="ui-page" id="acolor">
+		<header class="ui-header">
+			<h2 class="ui-title">Accent Color</h2>
+		</header>
+		<div class="ui-content content-padding">
+			<p>Accent Color (#)<br />
+			<input type="text" id="hexColor"></p>
+			<div class="ui-popup-footer ui-side-button ui-grid-col-2">
+				<a id="2btnPopup-cancel" href="#" class="ui-btn btn-icon-cancel" data-rel="back">Cancel</a>
+				<a id="2btnPopup-ok-color" href="#" class="ui-btn btn-icon-check" data-rel="back">OK</a>
+			</div>	
+		</div>
+	</div>	
+	
+	<div class="ui-page" id="weatherapi">
+		<header class="ui-header">
+			<h2 class="ui-title">Weather API</h2>
+		</header>
+		<div class="ui-content content-padding">
+			<p>Weather API<br />
+			<input type="text" id="wAPI"></p>
+			<div class="ui-popup-footer ui-side-button ui-grid-col-2">
+				<a id="2btnPopup-cancel" href="#" class="ui-btn btn-icon-cancel" data-rel="back">Cancel</a>
+				<a id="2btnPopup-ok-color" href="#" class="ui-btn btn-icon-check" data-rel="back">OK</a>
+			</div>	
+		</div>
+	</div>	
+	
+	<div class="ui-page" id="tz1">
+		<header class="ui-header">
+			<h2 class="ui-title">Time Zone 1</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview" id="tz1_sel">
+				<li><a data-rel="back">Asia/Hong_Kong</a></li>
+				<li><a data-rel="back">Asia/Tokyo</a></li>
+				<li><a data-rel="back">Australia/Sydney</a></li>
+				<li><a data-rel="back">US/Hawaii</a></li>
+				<li><a data-rel="back">US/Pacific</a></li>
+				<li><a data-rel="back">US/Mountain</a></li>
+				<li><a data-rel="back">US/Central</a></li>
+				<li><a data-rel="back">US/Eastern</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="ui-page" id="tz2">
+		<header class="ui-header">
+			<h2 class="ui-title">Time Zone 2</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview" id="tz2_sel">
+				<li><a data-rel="back">Asia/Hong_Kong</a></li>
+				<li><a data-rel="back">Asia/Tokyo</a></li>
+				<li><a data-rel="back">Australia/Sydney</a></li>
+				<li><a data-rel="back">US/Hawaii</a></li>
+				<li><a data-rel="back">US/Pacific</a></li>
+				<li><a data-rel="back">US/Mountain</a></li>
+				<li><a data-rel="back">US/Central</a></li>
+				<li><a data-rel="back">US/Eastern</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
+	<script type="text/javascript" src="js/circle-helper.js"></script>
+	<script src="app.js"></script>
+	<script src="lowBatteryCheck.js"></script>
+</body>
+</html>
