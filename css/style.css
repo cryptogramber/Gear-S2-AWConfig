@@ -5,6 +5,10 @@
 	padding-right: 30px;
 }
 
+.content-padding-input {
+	padding-bottom: 10px;
+}
+
 .button-group-height {
 	height: 72px;
 }
@@ -1067,5 +1071,31 @@ input[type="checkbox"]#checkboxControl {
 }
 
 #minutesOffset, #hexColor, #wAPI {
-	width: 300px;
+	width: 180px;
+	text-align: center;
+}
+
+.button-row {
+	width: 100%;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.buttons {
+	display: inline-block;
+	padding-top: 28.5px;
+	padding-bottom: 28.5px;
+	width: 35%;
+	margin: 0px;
+	font-size: 32px;
+ 	line-height: 24px;
+ 	text-align: center;
+ 	white-space: nowrap;
+ 	cursor: pointer;
+ 	vertical-align: middle;
+ 	text-overflow: ellipsis;
+ 	overflow: hidden;
+ 	border: 0 none;
+ 	color: rgba(245, 245, 245, 1);
+ 	background-color: rgba(2, 56, 92, 1);
 }

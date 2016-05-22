@@ -17,7 +17,10 @@
 			<ul class="ui-listview">
 				<li class="li-has-multiline"><a href="#tz1">Time Zone 1<span class="ui-li-sub-text li-text-sub" id="s_tz1">US/Pacific</span></a></li>
 				<li class="li-has-multiline"><a href="#tz2">Time Zone 2<span class="ui-li-sub-text li-text-sub" id="s_tz2">Asia/Tokyo</span></a></li>
-				<li class="li-has-multiline"><a href="#offset">Time Offset<span class="ui-li-sub-text li-text-sub" id="s_to">10</span></a></li>
+				<li class="li-has-multiline"><a href="#offset">Minutes Offset<span class="ui-li-sub-text li-text-sub" id="s_to">0</span></a></li>
+				<li class="li-has-multiline"><a href="#tfmode1">TZ1 Display<span class="ui-li-sub-text li-text-sub" id="s_tf1">12 Hours</span></a></li>
+				<li class="li-has-multiline"><a href="#tfmode2">TZ2 Display<span class="ui-li-sub-text li-text-sub" id="s_tf2">12 Hours</span></a></li>
+				<li class="li-has-multiline"><a href="#tempdisp">Temp Units<span class="ui-li-sub-text li-text-sub" id="s_td">Fahrenheit</span></a></li>
 				<li class="li-has-multiline"><a href="#acolor">Accent Color<span class="ui-li-sub-text li-text-sub" id="s_ac">#bde52a</span></a></li>
 				<li class="li-has-multiline"><a href="#weatherapi">Weather API<span class="ui-li-sub-text li-text-sub" id="s_api">api-key-from-wu</span></a></li>
 				<li id="saveexit"><a href="#">Save Config</a></li>
@@ -27,29 +30,62 @@
 	
 	<div class="ui-page" id="offset">
 		<header class="ui-header">
-			<h2 class="ui-title">Time Offset</h2>
+			<h2 class="ui-title">Minutes Offset</h2>
 		</header>
-		<div class="ui-content content-padding">
-			<p>Time Offset (min)<br />
-			<input type="text" id="minutesOffset"></p>	
-			<div class="ui-popup-footer ui-side-button ui-grid-col-2">
-				<a id="2btnPopup-cancel" href="#" class="ui-btn btn-icon-cancel" data-rel="back">Cancel</a>
-				<a id="2btnPopup-ok-min" href="#" class="ui-btn btn-icon-check" data-rel="back">OK</a>
-			</div>	
+		<div class="ui-content content-padding-input">
+			<input type="text" id="minutesOffset">
+			<div class="button-row">
+				<a id="2btnPopup-cancel" href="#" class="buttons" data-rel="back">Cancel</a>
+				<a id="2btnPopup-ok-min" href="#" class="buttons" data-rel="back">OK</a>	
+			</div>
 		</div>
 	</div>
 	
+	<div class="ui-page" id="tfmode1">
+		<header class="ui-header">
+			<h2 class="ui-title">TZ1 Display</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview" id="tfh1_sel">
+				<li><a data-rel="back">12 Hours</a></li>
+				<li><a data-rel="back">24 Hours</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="ui-page" id="tfmode2">
+		<header class="ui-header">
+			<h2 class="ui-title">TZ2 Display</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview" id="tfh2_sel">
+				<li><a data-rel="back">12 Hours</a></li>
+				<li><a data-rel="back">24 Hours</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="ui-page" id="tempdisp">
+		<header class="ui-header">
+			<h2 class="ui-title">Temp Units</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview" id="temp_sel">
+				<li><a data-rel="back">Fahrenheit</a></li>
+				<li><a data-rel="back">Celsius</a></li>
+			</ul>
+		</div>
+	</div>
 	
 	<div class="ui-page" id="acolor">
 		<header class="ui-header">
 			<h2 class="ui-title">Accent Color</h2>
 		</header>
-		<div class="ui-content content-padding">
-			<p>Accent Color (#)<br />
-			<input type="text" id="hexColor"></p>
-			<div class="ui-popup-footer ui-side-button ui-grid-col-2">
-				<a id="2btnPopup-cancel" href="#" class="ui-btn btn-icon-cancel" data-rel="back">Cancel</a>
-				<a id="2btnPopup-ok-color" href="#" class="ui-btn btn-icon-check" data-rel="back">OK</a>
+		<div class="ui-content content-padding-input">
+			<input type="text" id="hexColor">
+			<div class="button-row">
+				<a id="2btnPopup-cancel" href="#" class="buttons" data-rel="back">Cancel</a>
+				<a id="2btnPopup-ok-color" href="#" class="buttons" data-rel="back">OK</a>
 			</div>	
 		</div>
 	</div>	
@@ -58,13 +94,12 @@
 		<header class="ui-header">
 			<h2 class="ui-title">Weather API</h2>
 		</header>
-		<div class="ui-content content-padding">
-			<p>Weather API<br />
-			<input type="text" id="wAPI"></p>
-			<div class="ui-popup-footer ui-side-button ui-grid-col-2">
-				<a id="2btnPopup-cancel" href="#" class="ui-btn btn-icon-cancel" data-rel="back">Cancel</a>
-				<a id="2btnPopup-ok-color" href="#" class="ui-btn btn-icon-check" data-rel="back">OK</a>
-			</div>	
+		<div class="ui-content content-padding-input">
+			<input type="text" id="wAPI">	
+			<div class="button-row">
+				<a id="2btnPopup-cancel" href="#" class="buttons" data-rel="back">Cancel</a>
+				<a id="2btnPopup-ok-wapi" href="#" class="buttons" data-rel="back">OK</a>
+			</div>
 		</div>
 	</div>	
 	
@@ -82,6 +117,31 @@
 				<li><a data-rel="back">US/Mountain</a></li>
 				<li><a data-rel="back">US/Central</a></li>
 				<li><a data-rel="back">US/Eastern</a></li>
+				<li><a data-rel="back">UTC</a></li>
+				<li><a data-rel="back">Etc/GMT+1</a></li>
+				<li><a data-rel="back">Etc/GMT+2</a></li>
+				<li><a data-rel="back">Etc/GMT+3</a></li>
+				<li><a data-rel="back">Etc/GMT+4</a></li>
+				<li><a data-rel="back">Etc/GMT+5</a></li>
+				<li><a data-rel="back">Etc/GMT+6</a></li>
+				<li><a data-rel="back">Etc/GMT+7</a></li>
+				<li><a data-rel="back">Etc/GMT+8</a></li>
+				<li><a data-rel="back">Etc/GMT+9</a></li>
+				<li><a data-rel="back">Etc/GMT+10</a></li>
+				<li><a data-rel="back">Etc/GMT+11</a></li>
+				<li><a data-rel="back">Etc/GMT+12</a></li>
+				<li><a data-rel="back">Etc/GMT-1</a></li>
+				<li><a data-rel="back">Etc/GMT-2</a></li>
+				<li><a data-rel="back">Etc/GMT-3</a></li>
+				<li><a data-rel="back">Etc/GMT-4</a></li>
+				<li><a data-rel="back">Etc/GMT-5</a></li>
+				<li><a data-rel="back">Etc/GMT-6</a></li>
+				<li><a data-rel="back">Etc/GMT-7</a></li>
+				<li><a data-rel="back">Etc/GMT-8</a></li>
+				<li><a data-rel="back">Etc/GMT-9</a></li>
+				<li><a data-rel="back">Etc/GMT-10</a></li>
+				<li><a data-rel="back">Etc/GMT-11</a></li>
+				<li><a data-rel="back">Etc/GMT-12</a></li>
 			</ul>
 		</div>
 	</div>
@@ -100,12 +160,38 @@
 				<li><a data-rel="back">US/Mountain</a></li>
 				<li><a data-rel="back">US/Central</a></li>
 				<li><a data-rel="back">US/Eastern</a></li>
+				<li><a data-rel="back">UTC</a></li>
+				<li><a data-rel="back">Etc/GMT+1</a></li>
+				<li><a data-rel="back">Etc/GMT+2</a></li>
+				<li><a data-rel="back">Etc/GMT+3</a></li>
+				<li><a data-rel="back">Etc/GMT+4</a></li>
+				<li><a data-rel="back">Etc/GMT+5</a></li>
+				<li><a data-rel="back">Etc/GMT+6</a></li>
+				<li><a data-rel="back">Etc/GMT+7</a></li>
+				<li><a data-rel="back">Etc/GMT+8</a></li>
+				<li><a data-rel="back">Etc/GMT+9</a></li>
+				<li><a data-rel="back">Etc/GMT+10</a></li>
+				<li><a data-rel="back">Etc/GMT+11</a></li>
+				<li><a data-rel="back">Etc/GMT+12</a></li>
+				<li><a data-rel="back">Etc/GMT-1</a></li>
+				<li><a data-rel="back">Etc/GMT-2</a></li>
+				<li><a data-rel="back">Etc/GMT-3</a></li>
+				<li><a data-rel="back">Etc/GMT-4</a></li>
+				<li><a data-rel="back">Etc/GMT-5</a></li>
+				<li><a data-rel="back">Etc/GMT-6</a></li>
+				<li><a data-rel="back">Etc/GMT-7</a></li>
+				<li><a data-rel="back">Etc/GMT-8</a></li>
+				<li><a data-rel="back">Etc/GMT-9</a></li>
+				<li><a data-rel="back">Etc/GMT-10</a></li>
+				<li><a data-rel="back">Etc/GMT-11</a></li>
+				<li><a data-rel="back">Etc/GMT-12</a></li>
 			</ul>
 		</div>
 	</div>
 	
 	<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
 	<script type="text/javascript" src="js/circle-helper.js"></script>
+	<script src="loadvalues.js"></script>
 	<script src="app.js"></script>
 	<script src="lowBatteryCheck.js"></script>
 </body>
